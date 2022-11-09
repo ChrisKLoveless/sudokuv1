@@ -1,4 +1,4 @@
-import { numMatch } from '../src/numbers.js';
+import { numArrayMatch, numMatch } from '../src/numbers.js';
 import { addTen } from '../src/numbers.js';
 
 describe("noMatch", () => {
@@ -12,5 +12,12 @@ describe("addTen", () => {
   test('should tell if numbers add up to 10', () => {
     let add = addTen(6,4);
     expect(add).toEqual(true);
+  });
+});
+
+describe("numArrayMatch", () => {
+  test('it should take an array of numbers and check for matches', () => {
+    let numArray = [1,2,3,2,4,4,5,6,6,7,8,9];
+    expect(numArrayMatch(numArray)).toEqual(['2', '4', '6']);
   });
 });
